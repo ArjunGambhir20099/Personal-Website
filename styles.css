@@ -670,6 +670,18 @@ body:has(#gallery:target) .nav-gallery {
   height: auto;
   transform: translateX(2px);
 }
+.hero-collage {
+  opacity: 0;
+  transform: translateX(2px) translateY(4px);
+  transition:
+    opacity 280ms ease,
+    transform 280ms ease;
+}
+
+.hero-collage.is-loaded {
+  opacity: 1;
+  transform: translateX(2px) translateY(0);
+}
 
 .achievement-strip {
   width: min(100%, 1128px);
