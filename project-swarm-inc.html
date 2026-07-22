@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swarm Inc. | Arjun Gambhir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=final-simple-motion-gallery-1" />
+  </head>
+  <body class="project-detail-page">
+    <main class="page-shell">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="index.html">Arjun Gambhir</a>
+        <nav class="nav-links">
+          <a class="nav-about" href="index.html#about">About</a>
+          <a class="nav-advocacy" href="advocacy-speaking.html">Advocacy &amp; Speaking</a>
+          <a class="nav-left" href="left-brain.html">Left Brain</a>
+          <a class="nav-right" href="right-brain.html">Right Brain</a>
+          <a class="nav-experience" href="experience.html">Experience</a>
+        </nav>
+      </header>
+
+      <article class="project-detail swarm-project">
+        <a class="detail-back" href="left-brain.html">Back to projects</a>
+        <h1>Swarm Inc.</h1>
+        <div class="project-icons detail-tags" aria-label="Project details">
+          <span>Summer accelerator</span>
+          <span>Youngest team</span>
+          <span>Swarm robotics</span>
+          <span>Software and Hardware</span>
+        </div>
+
+        <section class="detail-video-section">
+          <h2>Video</h2>
+          <div class="detail-video">
+            <iframe
+              src="https://www.youtube.com/embed/urE8nneagQs?start=1&playsinline=1&controls=1&rel=0"
+              title="Swarm Inc. Demo Day video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </section>
+
+        <section class="detail-about">
+          <h2>About</h2>
+          <p>
+            Two robot nerds, one big idea: make small robots think together. In
+            this Patch Demo Day pitch, we show how we went from simulations to a
+            DIY robot swarm in just seven weeks - then run a live 200+ audience
+            powered demo.
+          </p>
+          <p>
+            During PATCH, Shane and I became interested in swarm robotics: the idea
+            that many simple robots can work together to create behaviour that
+            looks intelligent at the group level. We started by looking at natural
+            swarms like birds, ants, and fish, but the part that really caught our
+            attention was the engineering question underneath it: how do you get
+            independent robots to move, coordinate, and complete tasks together
+            without constantly colliding?
+          </p>
+
+          <h3>Starting with simulations</h3>
+          <p>
+            Before building the robots, we first created a set of virtual swarm
+            simulations. This gave us a way to test ideas quickly before dealing
+            with hardware. We experimented with robots forming letters and shapes,
+            pushing an object towards a target, and mimicking flocking behaviour.
+            These simulations eventually became a live website, swarminc.com, where
+            we could show the algorithms visually and make the idea easier to
+            understand.
+          </p>
+
+          <div class="inline-figure-grid swarm-figure-grid">
+            <figure class="detail-figure compact">
+              <img src="assets/swarm-inc/simulation-flocking.png" alt="Swarm Inc. flocking simulation with glowing robots following separation, alignment, and cohesion rules" loading="lazy" />
+              <figcaption>Flocking simulation exploring separation, alignment, cohesion, and collision avoidance.</figcaption>
+            </figure>
+            <figure class="detail-figure compact">
+              <img src="assets/swarm-inc/simulation-box-pushing.png" alt="Swarm Inc. box-pushing simulation with robots coordinating around a target" loading="lazy" />
+              <figcaption>Box-pushing simulation testing coordinated movement towards a target.</figcaption>
+            </figure>
+          </div>
+
+          <figure class="detail-figure article-figure swarm-story-figure">
+            <img src="assets/swarm-inc/simulation-alphabet-grid.png" alt="Alphabet robots positioned across a coloured virtual grid" loading="lazy" />
+            <figcaption>Early alphabet-formation simulation used to test grid-based positioning and coordinated paths.</figcaption>
+          </figure>
+
+          <h3>Building the robots</h3>
+          <p>
+            Once the simulations worked, we wanted to see what swarm behaviour
+            would look like in the real world. Buying ready-made compact swarm
+            robots was far too expensive, so we decided to build our own. Each
+            robot used an acrylic chassis, two powered wheels, caster wheels for
+            balance, an ESP32-S3 microcontroller, an L298N motor driver, and
+            separate power sources for the logic and motors.
+          </p>
+
+          <figure class="detail-figure article-figure swarm-story-figure">
+            <img src="assets/swarm-inc/robot-prototyping.png" alt="Three views of a custom Swarm Inc. robot being assembled and tested" loading="lazy" />
+            <figcaption>Hardware prototyping across assembly, wiring, control, and early movement tests.</figcaption>
+          </figure>
+
+          <h3>The Eurogiant battery saga</h3>
+          <p>
+            This was when the real chaos started: batteries. The microcontroller
+            needed stable power, the motors needed enough current, and the robots
+            needed to run long enough for testing without dying every few minutes.
+            We tested cheap battery packs and mixed setups until we settled on a
+            practical split-power system, with one supply for the electronics and
+            another for the motors.
+          </p>
+
+          <figure class="detail-figure article-figure swarm-component-figure">
+            <img src="assets/swarm-inc/battery-pack.png" alt="Red USB battery pack and charging cable used during early Swarm Inc. power testing" loading="lazy" />
+            <figcaption>One of the compact battery packs tested while developing a reliable split-power system.</figcaption>
+          </figure>
+
+          <h3>Motor control</h3>
+          <p>
+            For movement, the ESP32-S3 acted as the brain of each robot. It
+            received commands over Wi-Fi, controlled the motor driver using GPIO
+            and PWM signals, and handled basic onboard logic. The L298N motor
+            driver controlled direction and speed using an H-bridge design, so each
+            robot could move forward, reverse, turn, or stop.
+          </p>
+
+          <figure class="detail-figure article-figure swarm-component-figure">
+            <img src="assets/swarm-inc/esp32-s3.png" alt="ESP32-S3 development board used as the onboard controller for each Swarm Inc. robot" loading="lazy" />
+            <figcaption>The ESP32-S3 controller responsible for Wi-Fi communication, onboard logic, and motor commands.</figcaption>
+          </figure>
+
+          <h3>Overhead camera tracking</h3>
+          <p>
+            The next problem was localisation. Instead of adding expensive sensors
+            to every robot, we built an overhead camera system. Each robot had an
+            ArUco marker placed on top of it, and OpenCV detected each marker in
+            real time. We mapped the floor into a 6x6 grid, almost like a
+            chessboard, so each robot could be assigned a position such as A3 or
+            D5.
+          </p>
+
+          <div class="inline-figure-grid swarm-figure-grid">
+            <figure class="detail-figure compact">
+              <img src="assets/swarm-inc/overhead-camera.png" alt="Camera mounted above the Swarm Inc. testing area" loading="lazy" />
+              <figcaption>The overhead camera used to observe the robots from a fixed viewpoint.</figcaption>
+            </figure>
+            <figure class="detail-figure compact">
+              <img src="assets/swarm-inc/camera-grid-tracking.png" alt="Overhead camera view with a green coordinate grid tracking a robot" loading="lazy" />
+              <figcaption>OpenCV grid mapping a detected robot to a live coordinate position.</figcaption>
+            </figure>
+          </div>
+
+          <figure class="detail-figure article-figure swarm-story-figure">
+            <img src="assets/swarm-inc/camera-green-grid-demo.png" alt="Live green-grid camera tracking demo showing robot coordinates on a tabletop test surface" loading="lazy" />
+            <figcaption>Live demo view of the grid-tracking system translating a physical robot into a target coordinate.</figcaption>
+          </figure>
+
+          <h3>Building SwarmNet</h3>
+          <p>
+            Communication was another major challenge. Public Wi-Fi and personal
+            hotspots were not reliable enough in the PATCH workspace, so we built
+            our own local network called SwarmNet using an Arduino UNO R4 WiFi as a
+            dedicated access point. Each robot ran a small web server with its own
+            IP address and port, letting our Python control program send commands
+            to specific robots.
+          </p>
+
+          <h3>Physical demos</h3>
+          <p>
+            Our physical demos included voice-controlling the robots' motion with
+            audience voice commands, creating a mini GPS to control robots using
+            overhead cameras, and even giving robots a "bumpy ride".
+          </p>
+
+          <div class="inline-figure-grid swarm-video-grid">
+            <figure class="detail-media compact">
+              <video controls preload="metadata" playsinline>
+                <source src="assets/swarm-inc/robot-demo.mp4" type="video/mp4" />
+                Your browser does not support embedded MP4 video.
+              </video>
+              <figcaption>Physical robot movement demo during development.</figcaption>
+            </figure>
+            <figure class="detail-media compact">
+              <video controls preload="metadata" playsinline>
+                <source src="assets/swarm-inc/swarm-demo.mp4" type="video/mp4" />
+                Your browser does not support embedded MP4 video.
+              </video>
+              <figcaption>Swarm coordination demo showing the system in action.</figcaption>
+            </figure>
+          </div>
+
+          <figure class="detail-figure article-figure swarm-story-figure swarm-portrait-figure">
+            <img src="assets/swarm-inc/robot-stack.png" alt="A vertical stack of five custom Swarm Inc. robots during development" loading="lazy" />
+            <figcaption>The growing robot fleet during the seven-week hardware build.</figcaption>
+          </figure>
+
+          <h3>What we built</h3>
+          <p>
+            By the end of the summer, the project had grown into a full swarm
+            robotics system: virtual simulations, a live website, custom-built
+            low-cost robots, an overhead tracking system, a local communication
+            network, and working physical demos. It was not just about making
+            robots move together; it was about building the full stack needed for
+            swarm behaviour.
+          </p>
+
+          <figure class="detail-figure article-figure swarm-story-figure final-figure">
+            <img src="assets/swarm-inc/patch-demo-day.png" alt="Arjun presenting three Swarm Inc. robots on stage at PATCH Demo Day" loading="lazy" />
+            <figcaption>Live Swarm Inc. demonstration at PATCH Demo Day in Dogpatch Labs.</figcaption>
+          </figure>
+        </section>
+
+        <section class="recognition-section">
+          <h2>Recognition</h2>
+          <div class="logo-wall swarm-logo-wall" aria-label="Recognition organisations">
+            <span><img src="assets/traffic-signal/logo-patch.png" alt="PATCH" /></span>
+            <span><img src="assets/traffic-signal/logo-dublin-maker.png" alt="Dublin Maker" /></span>
+          </div>
+          <ul class="recognition-list">
+            <li>Selected for an elite 7-week onsite youth accelerator program, supported by Stripe, OpenAI, Abbey Capital, and Dogpatch Labs.</li>
+            <li>Mentored by founders of unicorn startups, as well as leading researchers, engineers, and entrepreneurs across industry and academia.</li>
+            <li>Youngest participant in the cohort (age 16), and presented the project at Demo Day to an audience of 300+ builders, founders, researchers, and industry professionals.</li>
+          </ul>
+        </section>
+
+        <section class="gallery-section">
+          <h2>Gallery</h2>
+          <div class="gallery-slider">
+            <div class="detail-gallery swarm-gallery scrolling-gallery">
+              <figure>
+                <img src="assets/swarm-inc/gallery-demo-day-team.png" alt="Arjun and Shane presenting their robots together at PATCH Demo Day" loading="lazy" />
+                <figcaption>Presenting the robot fleet at PATCH Demo Day</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/swarm-inc/gallery-community-demo.png" alt="Arjun and Shane demonstrating the Swarm Inc. robots to a visitor" loading="lazy" />
+                <figcaption>Sharing the robots with the Dogpatch Labs community</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/swarm-inc/gallery-polaroids.png" alt="Polaroid portraits of Shane and Arjun from the accelerator" loading="lazy" />
+                <figcaption>PATCH accelerator memories</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/swarm-inc/gallery-team-finale.png" alt="Shane and Arjun marking the end of the Swarm Inc. accelerator build" loading="lazy" />
+                <figcaption>Closing out the seven-week build</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/swarm-inc/gallery-founders.png" alt="Shane and Arjun together at Dogpatch Labs" loading="lazy" />
+                <figcaption>The Swarm Inc. team</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/swarm-inc/gallery-demo-day-team.png" alt="" loading="lazy" />
+                <figcaption>Presenting the robot fleet at PATCH Demo Day</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/swarm-inc/gallery-community-demo.png" alt="" loading="lazy" />
+                <figcaption>Sharing the robots with the Dogpatch Labs community</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/swarm-inc/gallery-polaroids.png" alt="" loading="lazy" />
+                <figcaption>PATCH accelerator memories</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/swarm-inc/gallery-team-finale.png" alt="" loading="lazy" />
+                <figcaption>Closing out the seven-week build</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/swarm-inc/gallery-founders.png" alt="" loading="lazy" />
+                <figcaption>The Swarm Inc. team</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="gallery-slider gallery-slider-secondary" aria-hidden="true">
+            <div class="detail-gallery swarm-gallery scrolling-gallery gallery-reverse">
+              <figure><img src="assets/swarm-inc/gallery-founders.png" alt="" loading="lazy" /><figcaption>The Swarm Inc. team</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-team-finale.png" alt="" loading="lazy" /><figcaption>Closing out the seven-week build</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-polaroids.png" alt="" loading="lazy" /><figcaption>PATCH accelerator memories</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-community-demo.png" alt="" loading="lazy" /><figcaption>Sharing the robots with the Dogpatch Labs community</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-demo-day-team.png" alt="" loading="lazy" /><figcaption>Presenting the robot fleet at PATCH Demo Day</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-founders.png" alt="" loading="lazy" /><figcaption>The Swarm Inc. team</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-team-finale.png" alt="" loading="lazy" /><figcaption>Closing out the seven-week build</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-polaroids.png" alt="" loading="lazy" /><figcaption>PATCH accelerator memories</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-community-demo.png" alt="" loading="lazy" /><figcaption>Sharing the robots with the Dogpatch Labs community</figcaption></figure>
+              <figure><img src="assets/swarm-inc/gallery-demo-day-team.png" alt="" loading="lazy" /><figcaption>Presenting the robot fleet at PATCH Demo Day</figcaption></figure>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <footer class="site-footer">
+        <div class="footer-meta">
+          <p>@ 2026 Arjun Gambhir</p>
+          <p id="dublin-time">Dublin, Ireland: --:--:--</p>
+        </div>
+        <a href="#">Back to top</a>
+      </footer>
+    </main>
+    <script src="footer-time.js"></script>
+    <script src="site-header.js"></script>
+
+  </body>
+</html>

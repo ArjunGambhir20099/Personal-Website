@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Signal Research | Arjun Gambhir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=final-simple-motion-gallery-1" />
+  </head>
+  <body class="project-detail-page">
+    <main class="page-shell">
+      <header class="site-header" aria-label="Primary navigation">
+        <a class="brand" href="index.html">Arjun Gambhir</a>
+        <nav class="nav-links">
+          <a class="nav-about" href="index.html#about">About</a>
+          <a class="nav-advocacy" href="advocacy-speaking.html">Advocacy &amp; Speaking</a>
+          <a class="nav-left" href="left-brain.html">Left Brain</a>
+          <a class="nav-right" href="right-brain.html">Right Brain</a>
+          <a class="nav-experience" href="experience.html">Experience</a>
+        </nav>
+      </header>
+
+      <article class="project-detail traffic-project">
+        <a class="detail-back" href="left-brain.html">Back to projects</a>
+        <h1>Mean-Field Game Theory for Adaptive Predictive Traffic Signal Control . A Hybrid AI-Mathematical Framework for Equilibrium-Based Optimisation at Urban Intersections</h1>
+        <div class="project-icons detail-tags" aria-label="Project details">
+          <span>2024- Ongoing</span>
+          <span>Academic research</span>
+          <span>Multiple National Awards</span>
+        </div>
+
+        <section class="detail-video-section">
+          <h2>Video</h2>
+          <div class="detail-video">
+            <button class="video-poster" type="button" aria-label="Show traffic signal research video">
+              <span class="loading-spinner"></span>
+            </button>
+            <iframe
+              src="https://www.youtube.com/embed/svd4nOsKFOs?playsinline=1&controls=1&rel=0"
+              title="Traffic signal research video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </section>
+
+        <section class="detail-about">
+          <h2>About</h2>
+          <h3>My inspiration</h3>
+          <p>
+            Urban traffic congestion continues to challenge growing cities, yet many
+            modern traffic management systems depend on expensive infrastructure
+            upgrades, additional sensors, or large-scale data collection. For this
+            project, I wanted to investigate whether meaningful improvements could
+            be achieved without changing the existing traffic infrastructure.
+          </p>
+          <h3>Introduction</h3>
+          <p>
+            To explore this, I developed a hybrid adaptive traffic control framework
+            combining Mean-Field Game Theory with Reinforcement Learning. Rather
+            than modelling traffic as thousands of independent vehicles, the
+            framework represents it as a continuous large-scale flow, allowing
+            signal decisions to optimise the overall behaviour of the junction
+            instead of reacting to individual cars.
+          </p>
+
+          <figure class="detail-figure article-figure">
+            <img src="assets/traffic-signal/research-notes.png" alt="Handwritten traffic signal modelling notes" />
+            <figcaption>Early research notes converting SCATS detector volumes into arrival rates, density, equilibrium, and green-time decisions.</figcaption>
+          </figure>
+
+          <h3>Method</h3>
+          <p>
+            This network-level perspective provides a more scalable approach for
+            complex urban environments while remaining computationally practical.
+            A key design objective throughout the research was real-world
+            deployment. The controller was built to operate using existing traffic
+            sensors, making it a low-cost, low-risk solution that could integrate
+            into current traffic systems without additional hardware.
+          </p>
+
+          <figure class="detail-figure article-figure">
+            <img src="assets/traffic-signal/system-pipeline.png" alt="Five-stage adaptive traffic control pipeline" />
+            <figcaption>The five-stage controller flow: sensor inputs, rate prediction, Mean-Field Game solver, reinforcement-learning safety net, and adaptive signal control.</figcaption>
+          </figure>
+
+          <h3>Results</h3>
+          <p>
+            The framework was evaluated on a digital recreation of the Saint
+            Patrick's Cathedral junction in Dublin using publicly available traffic
+            data. Compared against the existing signal strategy, it achieved
+            statistically significant reductions in average waiting time, queue
+            length, and spillback probability, with all findings validated through
+            ANOVA and paired two-tailed hypothesis testing.
+          </p>
+
+          <figure class="detail-figure article-figure">
+            <img src="assets/traffic-signal/simulation.png" alt="Traffic junction simulation comparing signal states" />
+            <figcaption>Virtual junction simulation comparing baseline signal timing with adaptive control behaviour before moving toward real-world deployment.</figcaption>
+          </figure>
+
+          <h3>Recognition pathway</h3>
+          <p>
+            Beyond the technical research, the project was recognised by the
+            University of Limerick, PATCH, Stripe YSTE, and Intelligent Transport
+            Ireland, where it was later developed into a business concept during
+            the Stripe YSTE Bootcamp. The research is currently being extended
+            under the mentorship of Amirreza Kandiri at University College Dublin
+            towards academic publication.
+          </p>
+
+          <div class="inline-figure-grid traffic-results-grid">
+            <figure class="detail-figure compact">
+              <img src="assets/traffic-signal/scats-data-source.png" alt="Dublin City Council SCATS traffic volume dataset and junction location metadata" loading="lazy" />
+              <figcaption>Public SCATS traffic volume data used to ground the simulation in a real Dublin junction.</figcaption>
+            </figure>
+            <figure class="detail-figure compact">
+              <img src="assets/traffic-signal/results-box-plots.png" alt="Box plots comparing waiting time, queue length, and spillback before and after MFG-based control" loading="lazy" />
+              <figcaption>Statistical comparison showing reduced waiting time, queue length, and spillback variability.</figcaption>
+            </figure>
+          </div>
+
+          <figure class="detail-figure article-figure traffic-summary-figure">
+            <img src="assets/traffic-signal/results-summary.png" alt="Summary of traffic signal control results before and after adaptive MFG control" loading="lazy" />
+            <figcaption>A compact summary of the before-and-after gains across the core traffic metrics.</figcaption>
+          </figure>
+        </section>
+
+        <section class="recognition-section">
+          <h2>Recognition</h2>
+          <div class="logo-wall" aria-label="Recognition organisations">
+            <span><img src="assets/traffic-signal/logo-university-of-limerick.png" alt="University of Limerick" /></span>
+            <span><img src="assets/traffic-signal/logo-patch.png" alt="PATCH" /></span>
+            <span><img src="assets/traffic-signal/logo-btyste-red.png" alt="BT Young Scientist and Technology Exhibition" /></span>
+            <span><img src="assets/traffic-signal/logo-novaucd.png" alt="NovaUCD" /></span>
+            <span><img src="assets/traffic-signal/logo-dublin-maker.png" alt="Dublin Maker" /></span>
+            <span><img src="assets/traffic-signal/logo-its-ireland.png" alt="Intelligent Transport Systems Ireland" /></span>
+            <span><img src="assets/traffic-signal/logo-eflow.png" alt="eFlow" /></span>
+          </div>
+          <ul class="recognition-list">
+            <li><a href="https://www.jointecs.org/">T.E.C.S ISE x PATCH Overall Winner</a></li>
+            <li><a href="https://stripeyste.com/">Stripe Young Scientist and Technologist eFlow award and mathematics recognition</a></li>
+            <li><a href="https://stripeyste.com/business-bootcamp">Stripe Young Scientist Bootcamp</a></li>
+            <li><a href="https://www.google.com/search?q=dublin+maker">Dublin Maker 2025 presenter community feedback</a></li>
+          </ul>
+        </section>
+
+        <section class="gallery-section">
+          <h2>Gallery</h2>
+          <div class="gallery-slider">
+            <div class="detail-gallery traffic-gallery">
+              <figure>
+                <img src="assets/traffic-signal/gallery-eflow-award.png" alt="Arjun receiving the eFlow award at Stripe Young Scientist" />
+                <figcaption>Stripe YSTE eFlow recognition</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-tecs-award.png" alt="Arjun holding the TECS award at University of Limerick" />
+                <figcaption>TECS / PATCH overall winner</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-dublin-maker-demo.png" alt="Arjun presenting the adaptive traffic project at Dublin Maker" />
+                <figcaption>Dublin Maker demo table</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-dublin-maker-conversation.png" alt="Arjun discussing the adaptive traffic project with a Dublin Maker visitor" />
+                <figcaption>Community feedback at Dublin Maker</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-stripe-bootcamp-team.png" alt="Arjun with Stripe YSTE Bootcamp teammates holding project work" />
+                <figcaption>Stripe YSTE Bootcamp team</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/traffic-signal/gallery-eflow-award.png" alt="" />
+                <figcaption>Stripe YSTE eFlow recognition</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/traffic-signal/gallery-tecs-award.png" alt="" />
+                <figcaption>TECS / PATCH overall winner</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/traffic-signal/gallery-dublin-maker-demo.png" alt="" />
+                <figcaption>Dublin Maker demo table</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/traffic-signal/gallery-dublin-maker-conversation.png" alt="" />
+                <figcaption>Community feedback at Dublin Maker</figcaption>
+              </figure>
+              <figure aria-hidden="true">
+                <img src="assets/traffic-signal/gallery-stripe-bootcamp-team.png" alt="" />
+                <figcaption>Stripe YSTE Bootcamp team</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="gallery-slider traffic-gallery-slider-secondary" aria-hidden="true">
+            <div class="detail-gallery traffic-gallery traffic-gallery-reverse">
+              <figure>
+                <img src="assets/traffic-signal/gallery-stripe-bootcamp-team.png" alt="" />
+                <figcaption>Stripe YSTE Bootcamp team</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-dublin-maker-conversation.png" alt="" />
+                <figcaption>Community feedback at Dublin Maker</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-dublin-maker-demo.png" alt="" />
+                <figcaption>Dublin Maker demo table</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-tecs-award.png" alt="" />
+                <figcaption>TECS / PATCH overall winner</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-eflow-award.png" alt="" />
+                <figcaption>Stripe YSTE eFlow recognition</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-stripe-bootcamp-team.png" alt="" />
+                <figcaption>Stripe YSTE Bootcamp team</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-dublin-maker-conversation.png" alt="" />
+                <figcaption>Community feedback at Dublin Maker</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-dublin-maker-demo.png" alt="" />
+                <figcaption>Dublin Maker demo table</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-tecs-award.png" alt="" />
+                <figcaption>TECS / PATCH overall winner</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/traffic-signal/gallery-eflow-award.png" alt="" />
+                <figcaption>Stripe YSTE eFlow recognition</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <footer class="site-footer">
+        <div class="footer-meta">
+          <p>@ 2026 Arjun Gambhir</p>
+          <p id="dublin-time">Dublin, Ireland: --:--:--</p>
+        </div>
+        <a href="#">Back to top</a>
+      </footer>
+    </main>
+    <script>
+      const trafficPoster = document.querySelector(".video-poster");
+      const trafficVideo = document.querySelector(".detail-video iframe");
+      trafficVideo?.addEventListener("load", () => {
+        window.setTimeout(() => {
+          trafficPoster?.closest(".detail-video")?.classList.add("is-ready");
+        }, 550);
+      });
+      trafficPoster?.addEventListener("click", () => {
+        trafficPoster.closest(".detail-video")?.classList.add("is-ready");
+      });
+    </script>
+    <script src="footer-time.js"></script>
+    <script src="site-header.js"></script>
+
+  </body>
+</html>
